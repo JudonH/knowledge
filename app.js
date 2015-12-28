@@ -8,20 +8,20 @@ var template=require('art-template');
 
 //初始化controller
 var CONTROLLER_PATH=__dirname+'controller\\';
-var user=require('./controller/user/user');
+var demos=require('./controller/demos/demos');
 
 //配置全局变量
 global={
 	STATICS_URL:'/!__.__!',
-  //开启模板引擎内存缓存
-  isCache:true
+  //是否开启模板引擎内存缓存
+  isCache:false
 };
 
 //实例化一个express对象
 var app = express();
 
 //不开启缓存，用于开发阶段使用
-// template.config('cache', false);
+template.config('cache', false);
 // console.log(template);
 //设置模板目录
 app.set('views', path.join(__dirname, 'views'));
@@ -38,7 +38,7 @@ app.use('/',express.static(path.join(__dirname, 'views')));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 //设置中间组件
-app.use('/user',user);
+app.use('/demos',demos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
