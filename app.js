@@ -3,18 +3,17 @@ var express = require('express');
 //引入路劲解析模块
 var path = require('path');
 //引入腾讯模板引擎
-var template=require('art-template');
-
+var template = require('art-template');
 
 //初始化controller
-var CONTROLLER_PATH=__dirname+'controller\\';
-var demos=require('./controller/demos/demos');
+var CONTROLLER_PATH = __dirname + 'controller\\';
+var demos = require('./controller/demos/demos');
 
 //配置全局变量
-global={
-	STATICS_URL:'/!__.__!',
+global = {
+  STATICS_URL: '/!__.__!',
   //是否开启模板引擎内存缓存
-  isCache:false
+  isCache: false
 };
 
 //实例化一个express对象
@@ -22,7 +21,6 @@ var app = express();
 
 //不开启缓存，用于开发阶段使用
 template.config('cache', false);
-// console.log(template);
 //设置模板目录
 app.set('views', path.join(__dirname, 'views'));
 //设置模板引擎
@@ -34,11 +32,11 @@ app.set('view engine', 'html');
 //设置静态模块文件，建立'虚拟'目录为'/!__.__!'
 app.use('/!__.__!', express.static(path.join(__dirname, 'statics')));
 //设置多个静态资源
-app.use('/',express.static(path.join(__dirname, 'views')));
+// app.use('/', express.static(path.join(__dirname, 'views')));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 //设置中间组件
-app.use('/demos',demos);
+app.use('/demos', demos);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,10 +56,10 @@ app.use(function(err, req, res, next) {
 });
 
 //监听
-var server = app.listen(80,function() {
-	//主机名
-	var host = server.address().address;
-	//端口
-	var port = server.address().port;
-	console.log('App listening at http://localhost:%s', port);
+var server = app.listen(80, function() {
+  //主机名
+  var host = server.address().address;
+  //端口
+  var port = server.address().port;
+  console.log('App listening at http://localhost:%s', port);
 });

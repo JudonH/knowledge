@@ -5,17 +5,19 @@ var router = express.Router();
 
 //此模块处理各个demos模块
 router.get('/:path', function(req, res, next) {
-  res.render('demos/'+req.params.path, {
-  	statics: global.STATICS_URL,
-  	name:req.query.name,
-  	cache:global.isCache
-  },function(err,html){
-  	res.send(html);
-  });
+	//模板参数
+	var params = {
+		statics: global.STATICS_URL,
+		cache: global.isCache
+	};
+	//渲染
+	res.render('demos/' + req.params.path, params, function(err, html) {
+		res.send(html);
+	});
 });
 
 //错误处理
-router.use(function(err,req,res,next){
+router.use(function(err, req, res, next) {
 	console.error(err.message);
 	next(err);
 });
