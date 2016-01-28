@@ -55,7 +55,7 @@ app.use(function(err, req, res, next) {
   });
 });
 //监听
-var server = app.listen(process.env.PORT || 3000, function() {
+var server = app.listen(process.env.VCAP_APP_PORT || 3000, function() {
   //主机名
   var host = server.address().address;
   //端口
