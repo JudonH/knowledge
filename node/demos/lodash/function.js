@@ -129,3 +129,95 @@ console.log(result);
 
 // once
 // 创建一个只能调用一次的函数。 重复调用返回第一次调用的结果。
+// 相当于before(2, func);
+done=util.once(function(){
+	console.log('once');
+});
+done();
+done();
+// overArgs(func, [transforms])
+// 创建一个函数，调用时func 参数会先一对一的改变
+function doubled(n){
+	return n*2;
+}
+function square(n){
+	return n*n;
+}
+done=util.overArgs(function(x, y){
+	return [x, y];
+}, square, doubled);
+result=done(2, 4);
+console.log(result);
+// ****************??*******************
+// 不知道具体的适用场景是啥子！！
+// ****************??*******************
+
+//partial(func, [partials])
+// 创建一个函数。 该函数调用 func，并传入预设的参数。 这个方法类似 _.bind，除了它不会绑定 this。
+done=function(greeting, name){
+	console.log(greeting+' '+name);
+};
+var welcome=util.partial(done, 'welcome to');
+var hi=util.partial(done, 'hi');
+welcome('Mike');
+welcome('Marry');
+hi('Kate');
+var greet=util.partial(done, util, util);
+greet('welcome', 'Pig');
+
+// partialRight
+// 类似partial，其是从右到左预设参数的
+welcome=util.partialRight(done, 'Mike');
+welcome('welcome');
+
+// rearg(func, indexes)
+// 创建一个调用 func 的函数。 所传递的参数根据 indexes 调整到对应位置。
+var rearged=util.rearg(function(a, b, c){
+	return [a, b, c];
+}, 2, 0, 1);
+result=rearged('b', 'c', 'a');
+console.log(result);
+// ***************???****************
+// 不知道这个函数真正的用意
+// ***************???****************
+
+// rest(func, [start=func.length-1])
+// 创建一个调用 func 的函数。 this 绑定到这个函数 并且 从 start 之后的参数都作为数组传入。
+done=util.rest(function(what, names){
+	return what+' '+names;
+});
+result=done('hi', 'Mike', 'Kate');
+console.log(result);
+
+// spread(func)
+// 创建一个调用 func 的函数。 this 绑定到这个函数上。 把参数作为数组传入，类似于 Function#apply 
+done=util.spread(function(who, what){
+	return who+' says '+what;
+});
+result=done(['Mike', 'Hello']);
+console.log(result);
+
+// throttle(func, [wait=0], [options])
+// 创建一个节流函数，在 wait 秒内最多执行 func 一次的函数。
+done=util.throttle(function(){
+	console.log('Mi');
+}, 1000, {
+	'trailing': true
+});
+done();
+
+// unary(func)
+// 创建一个最多接受一个参数的函数，忽略多余的参数
+result=util.map(['6', '8', '10'], util.unary(util.parseInt));
+console.log(result);
+
+// wrap(value, wrapper)
+// 创建一个函数。提供的 value 包装在 wrapper 函数的第一个参数里。
+done=util.wrap(util.escape, function(func, text){
+	return '<p>'+ func(text)+'</p>';
+});
+result=done('this is a & test');
+console.log(result);
+
+// 经常用到的函数：
+// after、before、delay、spread、once、bind、partial、curry
