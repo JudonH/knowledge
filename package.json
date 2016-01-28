@@ -2,8 +2,10 @@
   "name": "knowledge",
   "version": "1.0.0",
   "description": "这是一个知识积累过程中的项目",
+  "engines": {"node": "0.11.x"},
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "node app.js"
   },
   "repository": {
