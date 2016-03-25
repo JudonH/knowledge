@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 //引入腾讯模板引擎
 var template = require('art-template');
-
+var app_port = process.env.VCAP_APP_PORT || 3000;
 //初始化controller
 var CONTROLLER_PATH = __dirname + 'controller\\';
 var demos = require('./controller/demos/demos');
@@ -38,24 +38,24 @@ app.use('/!__.__!', express.static(path.join(__dirname, 'statics')));
 //设置中间组件
 app.use('/demos', demos);
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// // catch 404 and forward to error handler
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
+// // production error handler
+// // no stacktraces leaked to user
+// app.use(function(err, req, res, next) {
+//   res.status(err.status || 500);
+//   res.render('error', {
+//     message: err.message,
+//     error: {}
+//   });
+// });
 //监听
-var server = app.listen(process.env.PORT || 3000, function() {
+var server = app.listen(app_port, function() {
   //主机名
   var host = server.address().address;
   //端口

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "这是一个知识积累过程中的项目",
   "engines": {
-    "node": "0.11.x"
+    "node": ">=0.10"
   },
   "main": "app.js",
   "scripts": {
