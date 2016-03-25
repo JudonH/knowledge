@@ -1,0 +1,37 @@
+<script type="text/javascript" src="{{statics}}/js/public/sea.js"></script>
+<script type="text/javascript">
+	//所有demos文件都必须引入的代码
+	seajs.config({
+		//别名配置
+		alias: {
+			// jquery别名设置
+			'jquery': 'public/jquery.js',
+			// underscore别名设置
+			'underscore': 'public/underscore.js',
+			// lodash别名设置
+			'lodash': 'public/lodash.js',
+			'echarts': 'public/echarts.js'
+		},
+		//路径配置
+		paths:{
+			//公共的路径
+			'public': '{{statics}}/js/public',
+			//demos路径
+			'demos': '{{statics}}/js/demos'
+		},
+		//变量配置
+		vars:{
+
+		},
+		//映射配置
+		map:[],
+		//预加载项
+		preload:[],
+		//调试模式
+		debug:true,
+		//基础路径
+		base:'http://localhost/',
+		//文件编码
+		charset:'utf-8'
+	});
+</script>

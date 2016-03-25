@@ -10308,7 +10308,9 @@ jQuery.fn.andSelf = jQuery.fn.addBack;
 // AMD loader is present. jQuery is a special case. For more information, see
 // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
-if ( typeof define === "function" && define.amd ) {
+// if ( typeof define === "function" && define.amd ) {
+// 支持seajs，更改@judon @2016-02-14
+if ( typeof define === "function" && define.cmd) {
 	define( "jquery", [], function() {
 		return jQuery;
 	});

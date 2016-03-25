@@ -25,7 +25,9 @@
     "art-template": "^3.0.3",
     "cheerio": "^0.19.0",
     "express": "^4.13.3",
+    "geetest": "^0.5.3",
     "lodash": "^4.0.0",
-    "mongoose": "^4.2.3"
+    "mongoose": "^4.2.3",
+    "seajs": "^3.0.2"
   }
 }

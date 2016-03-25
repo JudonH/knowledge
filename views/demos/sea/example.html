@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sea.js库--显示不同的语言</title>
+</head>
+<body>
+	<h1>不同语言：</h1>
+	<pre>test</pre>
+</body>
+<script type="text/javascript" src="{{statics}}/js/public/sea.js"></script>
+<script type="text/javascript">
+	// Set configuration
+	seajs.config({
+		// 设置路径，方便跨目录调用
+		paths: {
+			'public': '{{statics}}/js/public',
+			'demos': '{{statics}}/js/demos'
+		},
+		//设置别名，方便调用
+		alias: {
+			'jquery': 'public/jquery.js'
+		}
+	});
+	seajs.use('{{statics}}/js/demos/sea/code.js');
+</script>
+</html>

@@ -1537,7 +1537,10 @@
   // popular enough to be bundled in a third party lib, but not be part of
   // an AMD load request. Those cases could generate an error when an
   // anonymous define() is called outside of a loader request.
-  if (typeof define === 'function' && define.amd) {
+  //@修改前
+  // if (typeof define === 'function' && define.amd) {
+  //@修改后 @huangzd @date 2016-02-22 @usefor 支持CMD
+  if (typeof define === 'function' && define.cmd) {
     define('underscore', [], function() {
       return _;
     });

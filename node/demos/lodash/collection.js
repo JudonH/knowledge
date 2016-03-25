@@ -95,3 +95,27 @@ console.log(result);
 // 创建一个经过 iteratee 处理的集合中每一个元素的结果数组
 result=util.map(list);
 console.log(result);
+
+// sample
+// 从集合返回一个随机数
+result=util.sample(list);
+console.log(result);
+
+// sampleSize(collection, [n=0]);
+// 从集合返回n个随机数
+result=util.sampleSize(object, 3);
+console.log(result);
+
+// shuffle
+// 返回一个被打乱的元素集合
+result=util.shuffle(list);
+console.log(result);
+
+// size
+// 返回集合的长度或对象中可枚举属性的个数
+result=util.size(list);
+console.log(result);
+result=util.size(object);
+console.log(result);
+result=util.size('中文123abc');
+console.log(result);

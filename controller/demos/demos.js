@@ -4,14 +4,27 @@ var express = require('express');
 var router = express.Router();
 
 //此模块处理各个demos模块
-router.get('/:path', function(req, res, next) {
+router.get('/:pdir', function(req, res, next) {
 	//模板参数
 	var params = {
 		statics: global.STATICS_URL,
 		cache: global.isCache
 	};
 	//渲染
-	res.render('demos/' + req.params.path, params, function(err, html) {
+	res.render('demos/' + req.params.pdir, params, function(err, html) {
+		res.send(html);
+	});
+});
+
+//此模块处理各个demos模块
+router.get('/:pdir/:pfile', function(req, res, next) {
+	//模板参数
+	var params = {
+		statics: global.STATICS_URL,
+		cache: global.isCache
+	};
+	//渲染
+	res.render('demos/' + req.params.pdir+'/'+req.params.pfile, params, function(err, html) {
 		res.send(html);
 	});
 });
