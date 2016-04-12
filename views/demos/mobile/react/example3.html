@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>移动端例子学习</title>
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/demo.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/empty.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/reset.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/head.css">
+</head>
+<body>
+<div class="s_top">
+	<header id="uiHead" class="ui-head">
+		<div class="ui-head-in">
+			<div class="ui-head-l">
+				<span class="ui-head-btn1" id="hd_return" onclick="window.history.go(-1);">返回</span>
+			</div>
+			<div class="ui-head-m">
+				<h2 class="ui-head-tit">Example 3 例子</h2>
+			</div>
+			<div class="ui-head-r">
+	            <span class="ui-head-btn4">筛选</span>
+	        </div>
+		</div>
+	</header>
+</div>
+<!--header e-->
+<!-- <div class="huodong-banner">
+	<img src="/static/huodong/logo/touch_logo_459.jpg">
+</div> -->
+<!--banner e-->
+
+<section class="huodong-section">
+	<div id="example3">
+	</div>
+</section>
+</body>
+<script src="{{statics}}/js/public/react.js"></script>
+<script src="{{statics}}/js/public/react-dom.js"></script>
+<script src="{{statics}}/js/public/browser.min.js"></script>
+<script type="text/babel">
+	// this.props.children属性表示组件的所有子节点
+	var NotesList = React.createClass({
+	  render: function() {
+	    console.log(this.props.children);
+	    return (
+	      <ol>
+	      {
+	        React.Children.map(this.props.children, function (child) {
+	          return <li>welcome, {child}!</li>;
+	        })
+	      }
+	      </ol>
+	    );
+	  }
+	});
+
+	ReactDOM.render(
+	  <NotesList>
+	    <span>Mike</span>
+	    <span>Marry</span>
+	    <span>Kate</span>
+	  </NotesList>,
+	  document.getElementById('example3')
+	);
+</script>
+</html>

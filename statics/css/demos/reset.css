@@ -1,0 +1,20 @@
+@charset "utf-8";
+/*
+author:fangk
+date:2014-11-17
+@content:移动端reset整理
+*/
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select{margin:0;padding:0;}
+body,input,textarea,select,button,table{font-size:14px;line-height:1.25em;}
+body{min-width:320px;font-size:14px;font-family:'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;color:#333;-webkit-text-size-adjust:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img,button {border:0;}
+li{list-style:none}
+a{text-decoration:none;color:#333;outline:none}
+img{vertical-align:middle}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button{font-size:100%}
+::-webkit-input-placeholder{color:#bbb;}
+input[type="text"],input[type="number"],input[type="password"]{-webkit-appearance:none;border-radius:0;}
+em,i{font-style:normal}
+.hide{display:none}
+.red{color:#f63f3f;}

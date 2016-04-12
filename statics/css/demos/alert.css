@@ -1,0 +1,9 @@
+/*弹窗*/
+.ui-layer {z-index:90; top:0; left:0; width:100%; height:100%; position:fixed;filter:alpha(opacity=60);opacity:.6; z-index:99; background:#000; }
+.ui-prompt {position:fixed; z-index:99; top:50%; margin-top:-120px;left:50%; margin-left:-190px; width:368px;color:#333;padding:5px;background: rgba(0,0,0,0.3);}
+.ui-prompt-close{position:absolute;right:14px;width:12px;height:12px;top:14px;font-size:16px;background-position:-24px -2px;cursor:pointer;}
+.ui-prompt-close:hover{margin-top:1px; transform: rotate(360deg);  transition: all 0.3s ease;}
+.ui-prompt-head{color: #666;font-size: 12px;height:30px;background:#e6e6e6;line-height:30px;text-indent:10px;}
+.ui-prompt-body{background:#FFF;padding:30px;line-height:30px;}
+.ui-prompt-foot{background:#FFF;padding-bottom:20px;line-height:30px;}
+.ui-alert-tips{position:fixed;z-index:100;top:50%;left:50%;width:80px;height:22px;margin-left:-60px;margin-top:-12px;line-height:22px;text-align:center;padding:10px 20px;background:#000;background:rgba(0,0,0,.8);color:#fff; font-size:16px;border-radius:4px;}

@@ -1,0 +1,104 @@
+/**
+ * author : hoi
+ * date   : 20151207
+ */
+body {
+    background-color: #f4f4f4;
+}
+.huodong-banner{ text-align: center;}
+.huodong-banner img{max-width: 100%;}
+.huodong-list {
+    font-size: 16px;
+    padding-top: 9px;
+}
+.huodong-item {
+    background-color: #fff;
+    border-top: 1px solid #e2e2e2;
+    overflow: hidden;
+    padding: 13px 15px;
+    position: relative;
+}
+.huodong-item a {
+    display: block;
+    color: #333;
+}
+.huodong-item a:visited {
+    color: #929292;
+}
+.huodong-item p {
+    padding: 0 0 0 15px;
+    line-height: 18px;    
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 34px;
+    color: #878c92;
+    font-size: 12px;
+}
+.huodong-item-img {
+    width: 124px;
+    height: 62px;
+    line-height: 60px;
+    float: left;
+}
+.huodong-item-img img {
+    width: 100%;
+    height: 100%;
+}
+.huodong-item-tit {
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 15px;
+    margin-bottom: 4px;
+    color: #333;
+}
+.ico-hd {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+}
+.ico-hd:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    bottom: -17px;
+    left: 0;
+}
+.ico-hd-hot {
+    background-color: #ff9000;
+}
+.ico-hd-rc {
+    background-color: #e4150f;
+}
+.huodong-item .ico-hd {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    z-index: 10;
+}
+.huodong-item .ico-hd-hot:after {
+    border-top-color: #ff9000;
+}
+.huodong-item .ico-hd-rc:after {
+    border-top-color: #e4150f;
+}
+
+.huodong-page-btn,.huodong-page-btn:active{
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 15px;
+    background: #ECECEC;
+    border-radius: 3px;
+    color: #515151;
+}

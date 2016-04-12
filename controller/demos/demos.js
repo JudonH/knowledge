@@ -29,6 +29,19 @@ router.get('/:pdir/:pfile', function(req, res, next) {
 	});
 });
 
+//此模块处理各个demos模块
+router.get('/:pfdir/:psdir/:pfile', function(req, res, next) {
+	//模板参数
+	var params = {
+		statics: global.STATICS_URL,
+		cache: global.isCache
+	};
+	//渲染
+	res.render('demos/' + req.params.pfdir+'/'+req.params.psdir+'/'+req.params.pfile, params, function(err, html) {
+		res.send(html);
+	});
+});
+
 //错误处理
 router.use(function(err, req, res, next) {
 	console.error(err.message);

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>移动端例子学习</title>
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/demo.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/empty.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/reset.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/head.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/form.css">
+	<style type="text/css">
+		.ui-nav li {
+		    float: left;
+		    width: 50%;
+		    text-align: center;
+		    border-bottom: 2px #fff solid;
+		    font-size: 16px;
+		    padding: 15px 0 4px;
+		    cursor: pointer;
+		    background-color: #8A2BE2;
+		    color: #fff;
+		}
+		.ui-nav li.active{
+			background-color: #9370D8;
+		}
+	</style>
+</head>
+<body>
+<div class="s_top">
+	<header id="uiHead" class="ui-head">
+		<div class="ui-head-in">
+			<div class="ui-head-l">
+				<span class="ui-head-btn1" id="hd_return" onclick="window.history.go(-1);">返回</span>
+			</div>
+			<div class="ui-head-m">
+				<h2 class="ui-head-tit">登录</h2>
+			</div>
+			<div class="ui-head-r">
+	            <span class="ui-head-btn4">筛选</span>
+	        </div>
+		</div>
+	</header>
+</div>
+<!--header e-->
+<!-- <div class="huodong-banner">
+	<img src="/static/huodong/logo/touch_logo_459.jpg">
+</div> -->
+<!--banner e-->
+
+<section class="huodong-section">
+	<ul class="ui-nav">
+		<li class="active">手机号码</li>
+		<li>邮箱</li>
+	</ul>
+	<!-- 通用表单 开始 -->
+	<form action="/" id="login" class="ui-form">
+	    <!-- <ul class="ui-form-list hide">
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">电子邮箱</div>
+	                <div class="ui-form-td">
+	                    <input type="email" required class="ui-form-inp" placeholder="请输入电子邮箱">
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">电子邮箱输入有误</p>
+	        </li>
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">密　　码</div>
+	                <div class="ui-form-td">
+	                    <input type="password" required data-event="chkpw" class="ui-form-inp" placeholder="请输入密码">
+	                </div>
+	                <div class="ui-form-tdr">
+	                    <span class="ui-form-pwbtn"></span>
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">密码输入有误</p>
+	        </li>
+	    </ul>
+	    <div class="ui-form-btnwrap">
+	        <span class="ui-form-btn1 ui-form-mb10">登录</span>
+	        <span class="ui-form-btn2 ui-form-mb10">免费注册</span>
+	    </div> -->
+	</form>
+	<span class="ui-form-poptips hide">验证码发送成功！</span>
+</section>
+</body>
+<script src="{{statics}}/js/public/react.js"></script>
+<script src="{{statics}}/js/public/react-dom.js"></script>
+<script src="{{statics}}/js/public/browser.min.js"></script>
+<script type="text/babel">
+	// 表单
+	var Form = React.createClass({
+		render: function(){
+			return (
+				<ul class="ui-form-list" id="mobile">
+					{
+				        React.Children.map(this.props.children, function (child) {
+				          return {child};
+				        })
+				    }
+				</ul>
+			);
+		}
+	});
+	// 用户名输入框组件
+	var UserName = React.createClass({
+		// 初始化
+		getInitialState: function(){
+			return {placeholder: '用户名', value: ''};
+		},
+		// 处理变化事件
+		handleChange: function(event){
+			console.log(event.target.value);
+			// this.setState({value: event.target.value});
+		},
+		// 渲染函数
+		render: function(){
+			var value=this.state.value;
+			var placeholder=this.state.placeholder;
+			return (
+				<div>
+					<input type="text" value={value} onChange={this.handleChange} placeholder={placeholder} />
+					<span>6至12个字符</span>
+				</div>
+			);
+		}
+	});
+	// 手机输入框组件
+	var MobilePhone = React.createClass({
+		// 初始化
+		getInitialState: function(){
+			return {placeholder: '请输入手机号码', value: '123', length: 11};
+		},
+		// 处理变化事件
+		handleChange: function(event){
+			console.log(event.target.value);
+			// this.setState({value: event.target.value});
+		},
+		// 渲染函数
+		render: function(){
+			var value=this.state.value;
+			var placeholder=this.state.placeholder;
+			// 设置长度
+			var length=this.state.length;
+			return (
+				<li className="ui-form-li">
+		            <div className="ui-form-table">
+		                <div className="ui-form-th">手机号码</div>
+		                <div className="ui-form-td">
+		                    <input type="mobile" className="ui-form-inp" onChange={this.handleChange} placeholder={placeholder} maxLength={length} minLength={length} />
+		                </div>
+		            </div>
+		            <p className="ui-form-alert hide">手机号码输入有误</p>
+		        </li>
+			);
+		}
+	});
+	// 密码输入框组件
+	var Password = React.createClass({
+		// 初始化
+		getInitialState: function(){
+			return {placeholder: '请输入密码', value: ''};
+		},
+		// 处理变化事件
+		handleChange: function(event){
+			console.log(event.target.value);
+			this.setState({value: event.target.value});
+		},
+		// 渲染函数
+		render: function(){
+			var value=this.state.value;
+			var placeholder=this.state.placeholder;
+			return (
+				<li className="ui-form-li">
+		            <div className="ui-form-table">
+		                <div className="ui-form-th">密　　码</div>
+		                <div className="ui-form-td">
+		                    <input type="password" required className="ui-form-inp" placeholder={placeholder} value={value} />
+		                </div>
+		                <div className="ui-form-tdr">
+		                    <span className="ui-form-pwbtn"></span>
+		                </div>
+		            </div>
+		            <p className="ui-form-alert hide">密码输入有误</p>
+		        </li>
+			);
+		}
+	});
+	// class要写成className
+	ReactDOM.render(
+		<ul className="ui-form-list">
+			<MobilePhone/>
+			<Password/>
+		</ul>, 
+		document.getElementById('login')
+	);
+</script>
+</html>

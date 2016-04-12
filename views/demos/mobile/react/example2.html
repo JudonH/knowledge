@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<title>移动端例子学习</title>
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/demo.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/empty.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/reset.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/head.css">
+	<link type="text/css" rel="stylesheet" href="{{statics}}/css/demos/form.css">
+</head>
+<body>
+<div class="s_top">
+	<header id="uiHead" class="ui-head">
+		<div class="ui-head-in">
+			<div class="ui-head-l">
+				<span class="ui-head-btn1" id="hd_return" onclick="window.history.go(-1);">返回</span>
+			</div>
+			<div class="ui-head-m">
+				<h2 class="ui-head-tit">Example 2 例子</h2>
+			</div>
+			<div class="ui-head-r">
+	            <span class="ui-head-btn4">筛选</span>
+	        </div>
+		</div>
+	</header>
+</div>
+<!--header e-->
+<!-- <div class="huodong-banner">
+	<img src="/static/huodong/logo/touch_logo_459.jpg">
+</div> -->
+<!--banner e-->
+
+<section class="huodong-section">
+	<!-- 通用表单 开始 -->
+	<form action="/" id="form" class="ui-form">
+	    <ul class="ui-form-list">
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">手机号码</div>
+	                <div class="ui-form-td">
+	                    <input type="mobile" data-aorb="b" required class="ui-form-inp" placeholder="请输入手机号码" >
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">手机号码输入有误</p>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">电子邮箱</div>
+	                <div class="ui-form-td">
+	                    <input type="email" required class="ui-form-inp" placeholder="请输入电子邮箱">
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">电子邮箱输入有误</p>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">密　　码</div>
+	                <div class="ui-form-td">
+	                    <input type="password" required data-event="chkpw" class="ui-form-inp" placeholder="请输入密码">
+	                </div>
+	                <div class="ui-form-tdr">
+	                    <span class="ui-form-pwbtn"></span>
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">密码输入有误</p>
+	        </li>
+
+	        <li class="ui-form-li ui-form-space">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">真实姓名</div>
+	                <div class="ui-form-td">
+	                    <input type="text" required class="ui-form-inp" placeholder="请输入真实姓名">
+	                </div>
+	                <div class="ui-form-tdr">
+	                    <span class="ui-form-sbtn1">修改</span>
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">真实姓名输入有误</p>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">验&nbsp;&nbsp;证&nbsp;&nbsp;码</div>
+	                <div class="ui-form-td">
+	                    <input type="tel" required class="ui-form-inp" placeholder="请输入验证码">
+	                </div>
+	                <div class="ui-form-tdr">
+	                    <span class="ui-form-sbtn2">发送验证码</span>
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">验证码输入有误</p>
+	        </li>
+	        
+	        <!--下拉菜单例子-->
+	        <li class="ui-form-li ui-form-space ui-form-drop"> <!--下拉菜单: 添加样式ui-form-drop-->
+	            <div class="ui-form-stit">我是小标题</div><!--小标题-->
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">银行卡号</div>
+	                <div class="ui-form-td">
+	                    <input type="tel" required class="ui-form-inp" placeholder="请输入银行卡号">
+	                </div>
+	                <div class="ui-form-tdr">
+	                    <span class="ui-form-dropbtn"></span> <!--下拉菜单: 箭头按钮-->
+	                </div>
+	                <!--下拉菜单: 下拉开始-->
+	                <div class="ui-form-dropmain hide">
+	                    <ul>
+	                        <li class="on">3225 4457 7445 588 江西</li>
+	                        <li>5435 4457 7445 432 广东</li>
+	                        <li>8676 8755 7562 654 黑龙江</li>
+	                        <li>3546 4457 3236 987 上海</li>
+	                    </ul>
+	                </div>
+	                <!--下拉菜单: 下拉结束-->
+	            </div>
+	            <p class="ui-form-alert hide">银行卡号输入有误</p>
+	            <p class="ui-form-tips">我是默认提示文字<br>提示文字换行效果，字数字数字数</p>
+	        </li>
+
+	        <li class="ui-form-li ui-form-space">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">输入数字</div>
+	                <div class="ui-form-td">
+	                    <input type="tel" validate="number" required min="-10" max="10" step="2" placeholder="-10&lt;值&lt;10, 必须是2的倍数" class="ui-form-inp">
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">输入数字有误</p>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">网　　址</div>
+	                <div class="ui-form-td">
+	                    <input type="url" required class="ui-form-inp" placeholder="请输入网址">
+	                </div>
+	            </div>
+	            <p class="ui-form-alert hide">网址输入有误</p>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">自定正则</div>
+	                <div class="ui-form-td">
+	                    <input type="tel" pattern="^\d+$" value="" placeholder="此输入框可自定义正则表达式" class="ui-form-inp">
+	                </div>
+	            </div>
+	        </li>
+
+	        <li class="ui-form-li">
+	            <div class="ui-form-table">
+	                <div class="ui-form-th">异步验证</div>
+	                <div class="ui-form-td">
+	                    <input type="text" data-url="https://api.github.com/legacy/user/search/china" data-method="getJSON" class="ui-form-inp">
+	                </div>
+	            </div>
+	        </li>
+
+	    </ul>
+	    <div class="ui-form-btnwrap">
+	        <span class="ui-form-btn1 ui-form-mb10">提交</span>
+	        <span class="ui-form-btn2 ui-form-mb10">免费注册</span>
+	    </div>
+	</form>
+	<span class="ui-form-poptips hide">验证码发送成功！</span>
+</section>
+</body>
+<script src="{{statics}}/js/public/react.js"></script>
+<script src="{{statics}}/js/public/react-dom.js"></script>
+<script src="{{statics}}/js/public/browser.min.js"></script>
+<script type="text/babel">
+	// 用户名输入框组件
+	var UserName = React.createClass({
+		// 初始化
+		getInitialState: function(){
+			return {placeholder: '用户名', value: ''};
+		},
+		// 处理变化事件
+		handleChange: function(event){
+			console.log(event.target.value);
+			this.setState({value: event.target.value});
+		},
+		// 渲染函数
+		render: function(){
+			var value=this.state.value;
+			var placeholder=this.state.placeholder;
+			return (
+				<div>
+					<input type="text" value={value} onChange={this.handleChange} placeholder={placeholder} />
+					<span>6至12个字符</span>
+				</div>
+			);
+		}
+	});
+	ReactDOM.render(<UserName/>, document.getElementById('example2'));
+</script>
+</html>

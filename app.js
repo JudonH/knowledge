@@ -15,6 +15,9 @@ var interface = require('./controller/interface/interface');
 var iJson = require('./controller/interface/json');
 var user=require('./controller/user/user');
 var uJson=require('./controller/user/json');
+// 活动模块
+var activity=require('./controller/activity/activity');
+var aJson=require('./controller/activity/json');
 //配置全局变量
 global = {
 	//主路径
@@ -53,6 +56,9 @@ app.use('/json/interface', iJson);
 // 用户模块
 app.use('/user', user);
 app.use('/json/user', uJson);
+// 活动模块
+app.use('/activity', activity);
+app.use('/json/activity', aJson);
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');

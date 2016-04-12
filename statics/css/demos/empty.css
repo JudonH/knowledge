@@ -1,0 +1,6 @@
+/*.ui-empty{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);text-align:center;display:inline-block;}*/
+.ui-empty{padding:70px 0;text-align:center;}
+.ui-empty img{margin-bottom:30px;}
+.ui-empty-dfont{font-size:14px;color:#333;height:14px;line-height:14px;margin-bottom:7px;}
+.ui-empty-gfont{font-size:12px;color:#b3b3b3;height:12px;line-height:12px;margin-bottom:25px;}
+.ui-empty-btn{font-size:14px;color:#333;height:40px;border:1px solid #c3c3c3;border-radius:4px;background:#fff;width:150px;}
